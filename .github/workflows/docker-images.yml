@@ -1,15 +1,18 @@
 name: Publish Docker Images
 
 on:
-  push
+  push:
 
 jobs:
   build_and_publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Login to GitHub Container Registry
+        run: echo ${{ secrets.MY_PAT }} | docker login ghcr.io --username abrs7 --password-stdin
+
       - name: Build and Publish Docker Images
         run: |
-          docker login ghcr.io --username abrs7 --password ${{secrets.MY_PAT}}
-          docker build -t ghcr.io/abrs7/django-docker-new
-          docker push ghcr.io/abrs7/django-docker-new
+          docker build -t ghcr.io/abrs7/django-docker-new:latest .
+          docker push ghcr.io/abrs7/django-docker-new:latest
