@@ -17,5 +17,5 @@ COPY . .
 EXPOSE 8008
 
 # CMD ["python", "manage.py", "runserver", "0.0.0.0:8008"]
-# CMD ["sh", "-c", "python manage.py collectstatic --noinput && python manage.py runserver 0.0.0.0:8008"]
-ENTRYPOINT [ "gunicorn", "a_core.wsgi", "-b", "0.0.0.0:8008"]
+CMD ["sh", "-c", "python manage.py collectstatic --noinput && python manage.py runserver 0.0.0.0:8008"]
+# ENTRYPOINT [ "gunicorn", "a_core.wsgi", "-b", "0.0.0.0:8008"]
