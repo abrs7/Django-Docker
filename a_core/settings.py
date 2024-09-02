@@ -33,7 +33,7 @@ else:
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'django-docker-cdm3.onrender.com', 'django-docker-latest.onrender.com']
 
 CSRF_TRUSTED_ORIGINS = [ 'https://django-docker-cdm3.onrender.com' ,'https://django-docker-latest.onrender.com']
-
+## Testing 
 
 # Application definition
 
