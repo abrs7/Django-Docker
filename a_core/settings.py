@@ -30,9 +30,9 @@ if ENVIRONMENT == 'development':
 else:
     DEBUG = False    
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'https://django-docker-beginners.onrender.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
-CSRF_TRUSTED_ORIGINS = [ 'https://django-docker-beginners.onrender.com' ]
+CSRF_TRUSTED_ORIGINS = [ 'https://' ]
 
 
 # Application definition
